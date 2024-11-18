@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="pratica1.css">
+
+    <title>Gerenciamento de Chamados</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gerenciamento de Chamados</h1>
+        <nav>
+            <a href="#cadastro-clientes">Cadastro de Clientes</a> |
+            <a href="#cadastro-chamados">Cadastro de Chamados</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="cadastro-clientes">
+            <h2>Cadastro de Clientes</h2>
+            <form action="/cadastrar-cliente" method="POST">
+                <label for="cliente-nome">Nome:</label>
+                <input type="text" id="cliente-nome" name="nome" required>
+                <br>
+
+                <label for="cliente-email">E-mail:</label>
+                <input type="email" id="cliente-email" name="email" required>
+                <br>
+
+                <label for="cliente-telefone">Telefone:</label>
+                <input type="tel" id="cliente-telefone" name="telefone" required>
+                <br>
+
+                <button type="submit">Cadastrar Cliente</button>
+            </form>
+        </section>
+
+        <hr>
+
+        
+        <section id="cadastro-chamados">
+            <h2>Cadastro de Chamados</h2>
+            <form action="/cadastrar-chamado" method="POST">
+                <label for="chamado-cliente-id">ID do Cliente:</label>
+                <input type="number" id="chamado-cliente-id" name="cliente_id" required>
+                <br>
+
+                <label for="chamado-descricao">Descrição do Problema:</label>
+                <textarea id="chamado-descricao" name="descricao" required></textarea>
+                <br>
+
+                <label for="chamado-criticidade">Criticidade:</label>
+                <select id="chamado-criticidade" name="criticidade" required>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <br>
+
+                <label for="chamado-status">Status:</label>
+                <select id="chamado-status" name="status" required>
+                    <option value="aberto" selected>Aberto</option>
+                    <option value="em-andamento">Em andamento</option>
+                    <option value="resolvido">Resolvido</option>
+                </select>
+                <br>
+
+                <label for="chamado-data-abertura">Data de Abertura:</label>
+                <input type="date" id="chamado-data-abertura" name="data_abertura" required>
+                <br>
+
+                <label for="chamado-colaborador-id">ID do Colaborador Responsável:</label>
+                <input type="number" id="chamado-colaborador-id" name="colaborador_id">
+                <br>
+
+                <button type="submit">Cadastrar Chamado</button>
+            </form>
+        </section>
+</body>
+</html>
